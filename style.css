@@ -1,0 +1,163 @@
+/* Add all your styles here */
+
+:root{
+  --grey: hsl(0, 0%, 59%);
+  --dark-grey: hsl(0, 0%, 17%);
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+.header{
+  position: relative;
+  height: 40%;
+  background-image: url('./images/pattern-bg-mobile.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 3;
+}
+
+.container {
+  margin: 0 auto;
+  width: 85%;
+  text-align: center;
+  padding: 20px 0px;
+}
+
+.container h2{
+    color: white;
+}
+
+.container form{
+  display: flex;
+  margin-top: 30px;
+}
+
+#form input:first-child{
+  outline: none;
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  background-color: white;
+  border-radius: 12px 0px 0px 12px;
+  color: hsl(0, 0%, 17%);
+}
+#form button{
+  -webkit-tap-highlight-color: transparent;
+  border: none;
+  background-color: hsl(0, 0%, 17%);
+  border-radius: 0px 12px 12px 0px;
+  cursor: pointer;
+}
+
+#form img{ 
+  padding: 18px;
+}
+
+#ip-info {
+  display: none;
+  flex-direction: column;
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 15px 0px;
+}
+
+#ip-info > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+#ip-info .title{
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: hsl(0, 0%, 59%);
+}
+#ip-info .info{
+  padding: 4px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: hsl(0, 0%, 17%);
+}
+.error{
+  display: none;
+  margin-top: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  color: hsl(0, 0%, 17%);
+  font-size: 17px;
+}
+hr{
+  display: none;
+}
+#map { height: 60%; z-index: 1; }
+
+.leaflet-control-attribution {
+  display: none;
+}
+
+@media screen and (min-width: 720px) {
+  .header {
+    height: 300px;
+    background-image: url('./images/pattern-bg-desktop.png');
+  }
+  .container {
+    width: 80%;
+    padding: 60px 0px;
+  }
+  
+  .container form{
+    width: 55%;
+    margin: 0 auto;
+    margin-top: 40px;
+  }
+  
+  #ip-info {
+    display: none;
+    grid-template-columns: 24% 1% 24%  1% 24% 1% 25%;
+    margin-top: 40px;
+    padding: 20px 10px;
+  }
+  #ip-info > div{
+    width: 100%;
+    padding: 0px 20px;
+    margin: 10px;
+  }
+  hr{
+    display: flex;
+    height: 50px;
+    width: 0.8px;
+    margin: auto;
+    margin-left: 10px;
+    color: var(--grey);
+  }
+  #ip-info .title{
+    width: 100%;
+    text-align: left;
+    padding: 5px 0px;
+    font-size: 0.6rem;
+  }
+
+  #ip-info .info{
+    width: 100%;
+    padding: 10px 0px;
+    text-align: left;
+    font-size: 1.1rem;
+  }
+  #map { height: calc(100% - 300px); z-index: 1; }
+}

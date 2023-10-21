@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IP Tracker</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+</head>
+<body>
+  <div class="header">
+  
+  
+    <div class="container">
+      <h2>IP Address Tracker</h2>
+      <form id="form">
+        <input class="ipText" name="ipText" type="text"/>
+        <button type="submit"><img class="arrow" src="./images/icon-arrow.svg"/></button>
+      </form>
+      
+      <div id="ip-info">
+      
+        <div>
+          <p class="title address">ip address</p>
+          <p class="info" id="address"></p>
+        </div>
+        <hr>
+        
+        <div>
+          <p class=" title location">location</p>
+          <p class="info" id="location"></p>
+        </div>
+        <hr>
+        
+        <div>
+          <p class=" title timezone">timezone</p>
+          <p class="info" id="zone"></p>
+        </div>
+        <hr>
+        
+        <div>
+          <p class="title isp">isp</p>
+          <p class="info" id="isp"></p>
+        </div>
+      
+      </div>
+      <div class="error"></div>
+    </div>
+  
+  </div>
+  <div id="map">
+  </div>
+
+
+<!--main js-->
+<script src="./js/IPLocation.js"> </script>
+<script src="./js/main.js"></script>
+</body>
+</html>
