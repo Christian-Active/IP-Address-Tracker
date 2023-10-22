@@ -29,17 +29,24 @@ let updateUI = async (data) => {
    }
 }
 
-form.addEventListener("submit", e => {
-   e.preventDefault(); 
-   let ip = form.ipText.value
-  
-   getIp(ip)
+let getLoct = (data) => {
+  getIp(data)
     .then(data => updateUI(data))
     .then(data => getPosition(data))
     .catch(err => {
       error.style.display = "block"
       error.innerText = err.message
     })
-    
+}
+
+form.addEventListener("submit", e => {
+    e.preventDefault(); 
+    let ip = form.ipText.value
+    getLoct(ip);
     form.reset();
+    localStorage.setItem("ip", ip)
 })
+
+if (localStorage.getItem("ip")){
+  getLoct(localStorage.getItem("ip"))
+}
